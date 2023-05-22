@@ -15,18 +15,20 @@
 
 	<article class="main-content col-xs-8">
 
-
-
 		<?php
-
 		/*  
-		Step 1: Create a link saying Click Here, and set 
-		the link href to pass some parameters and use the GET super global to see it
+		Step 1: Create a link saying Click Here, and set the link href to pass some parameters and use the GET super global to see it
 		Step 2: Set a cookie that expires in one week
 		Step 3: Start a session and set it to value, any value you want.
 		*/
-
+		if (isset($_GET['data'])) {
+			echo $_GET['data'];
+			echo "<br>";
+		}
 		?>
+
+		<a href="9.php?data=14">Click here</a>
+
 
 
 
