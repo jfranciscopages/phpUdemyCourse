@@ -1,6 +1,14 @@
 <?php include "functions.php"; ?>
 <?php include "includes/header.php"; ?>
+<?php
+session_start();
 
+$_SESSION['message'] = "Hi!";
+
+$expiration = time() + (60 * 60 * 24 * 7);
+$value = 'random something';
+setcookie('testcookie', $value, time() + 3600); /* expire in 1 hour */
+?>
 
 
 <section class="content">
@@ -28,6 +36,17 @@
 		?>
 
 		<a href="9.php?data=14">Click here</a>
+		<br>
+
+		<?php
+		if (isset($_COOKIE['testcookie'])) {
+			echo $_COOKIE['testcookie'] . "<br>";
+		}
+
+		if (isset($_SESSION['message'])) {
+			echo $_SESSION['message'] . "<br>";
+		}
+		?>
 
 
 
